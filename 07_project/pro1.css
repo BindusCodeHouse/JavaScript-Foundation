@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.canvas {
+    margin-top: 100px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Individual colors */
+
+#grey {
+    background-color: grey;
+}
+
+#pink {
+    background-color: pink;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+h2 span {
+    display: block;
+    margin-top: 10px;
+}

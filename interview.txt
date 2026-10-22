@@ -1,0 +1,72 @@
+Javascript Execution Context
+1. Global Execution Context
+2. Functional Execution Context
+3. Eval Execution Context
+
+what is Javascript Execution Context ?
+    it is define that javascript ki jo file hai use javascript run kaise karegi or execute 
+    kaise karegi.
+
+javascript code is turn in 2 phase :
+1. memory creation phase  (memory allocation is in this phase)
+2. execution phase   (+, - , * and other all operation happen in this)
+
+1.sabse pehle when we run the code then wo code global excution se run hota hai and use this ke 
+andar allocate kiya jata hai.
+
+2.uske bad memory phase aayega. usme sare variables ke name liye jate hai or usko undefined save 
+kiya jata hai. or function hai to uski definition save karega.
+
+3.at the end aata hai execution phase isme all variable ki value assign hoti hai or function ka ek 
+sandbox banata hai 
+uske bad jitni bar vo function call ho raha hai utni bar wo 2 step memory phase & execution phase 
+alg se follow karega and after execution ke bad value return karta hai.
+
+
+
+1. what is the difference between = & == ?
+    = is operator of assignment = it means we can assign value to the variable.
+    where as, == it is comparison operator so, for compare 2 value we can use ==.
+
+2. what is the difference between setInterval() & setTimeout() ?
+    The main difference between setTimeout() and setInterval() in JavaScript is how many times they execute a function.
+    - setTimeout() → executes a function once after a specified delay.
+    - setInterval() → executes a function repeatedly at a specified interval until you stop it.
+
+    setTimeout(() => {
+        console.log("Hello JavaScript");
+    }, 2000);
+
+    setInterval(() => {
+        console.log("Hello JavaScript");
+    }, 2000);
+
+3. what is promise in JavaScript ?
+    A Promise in JavaScript is an object that represents the eventual result of an asynchronous operation. 
+    It can be in three states: 
+        pending, 
+        fulfilled, or 
+        rejected.
+    For example, imagine ordering a pizza online. The order is pending while the pizza is being prepared. If the pizza is delivered, the Promise is fulfilled. If the order fails, the Promise is rejected.
+    In JavaScript, we use `then()` to handle success and `catch()` to handle errors.
+
+    One final thing to remember:
+    - Promise → represents a future result.
+    - .then() → handles success.
+    - .catch() → handles failure.
+    - .finally() → runs after the Promise settles, whether it succeeds or fails.
+
+4. if code promise me likha hai or network 404 return karta hai to kon handle karega response ya reject ?
+    ye response ko handle karega because, 404 kaise bhi wo aaya to api ke pass se hi. agar koi network issue hai jiski
+    vajah se apis call hi na ho sake or request pass hi na ho tab reject handle karega.
+
+    Imagine you order a product online.
+    - Case 1: The website receives your order but says, "Product not found." This is like HTTP 404. You received a response, even though something went wrong.
+    - Case 2: Your internet connection fails, so your order request never reaches the website. This is like a network error, which causes fetch() to reject.
+
+5. if me code me print karau 1 then setTimeOut(0) with print 2 and then 3 tab output kya aayega ?
+    1,3,2 because No.2 task queue me jayega fir call stack me jayega and fir call hoga tab tak 3 print ho jayega.
+
+
+6. Implicitly(Automatically) = automatically, without writing it directly.
+   Explicitly(Manually) = directly, by clearly writing it in the code.

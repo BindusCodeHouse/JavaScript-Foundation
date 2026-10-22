@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling & Capturing</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h1>Amazing Image</h1>
+    <ul id="images">
+        <li><img src="images/img1.jpg" alt="" height="100px" width="100px" id="img1"></li>
+        <li><img src="images/img2.jpg" alt="" height="100px" width="100px" id="img2"></li>
+        <li><img src="images/img3.jpg" alt="" height="100px" width="100px" id="img3"></li>
+        <li><img src="images/img4.jpg" alt="" height="100px" width="100px" id="img4"></li>
+        <li><a href="https://google.com" id="link">Go to Google</a></li>
+    </ul>
+</body>
+<script>
+    
+    // Way 1 :
+    // onClick Event
+    document.getElementById("img1").onclick = function() {
+        alert("you clicked on image1");
+    }
+
+    // Way 2:
+    // Click Event Listener :
+    document.getElementById('img4').addEventListener('click', function(e){
+        console.log("img 4 is clicked.");
+    }, false)
+
+    /*
+        stopPropagation() function use hota hai bubbling ke liye like, if innerElement run ho to outerElement innerElement ke sath
+        Perform nahi hona chahiye.
+
+        stopPropagation() → "Inner element ka event parent/outer element tak propagate mat hone do."
+    */
+    // Way 3::
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul.");
+    }, false)
+
+    document.getElementById('img4').addEventListener('click', function(e){
+        console.log("img 4 is clicked.");
+        e.stopPropagation()
+    }, false)    
+
+
+    /*
+        1. preventDefault()
+
+        It says:
+        "Browser, don't perform your normal/default action for this event."
+
+        For example, normally when you click an <a> link:
+        <a href="https://google.com" id="link">Go to Google</a>
+
+        The browser's default behavior is to navigate to Google.
+
+        You can stop that:
+        document.getElementById("link").addEventListener("click", function(e) {
+            e.preventDefault();
+            console.log("Link clicked");
+        });
+
+        Now clicking the link prints:
+        Link clicked
+
+        but the browser doesn't navigate to Google.
+    */
+    document.getElementById("link").addEventListener('click', function(e){
+        e.preventDefault();
+        console.log("Link clicked");
+    })
+
+    // Project : Remove image which tag is IMG 
+    document.querySelector("#images").addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName == "IMG"){
+            console.log(e.target.id);
+            console.log(e.target);
+            let removeIt = e.target.parentNode;
+            console.log(removeIt);
+            removeIt.remove();
+        }
+    }) 
+
+</script>
+</html>
