@@ -1,0 +1,13 @@
+Javascript :
+    By default, javascript is synchronous & single threded.
+
+    synchronous it means javascript run the code line by line
+    single threded it means all code run in single thread. 
+
+javascript single threaded hai lekin esa slow work nahi karti because, akela javascript ka engine kahi use nahi hota
+uske sath different Runtime Environment use hote hai. vo Runtime Environment Browser ka bhi ho sakta hai or Node ka bhi
+ho sakta  hai.
+
+
+Execution Context :
+    Execution Context ka meaning hota hai execute one line of code at a time.

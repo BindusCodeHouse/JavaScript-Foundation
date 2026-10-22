@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <h3>
+        Digital Clock
+    </h3>
+    <input type="time" id="clck">
+    <button id="strt">Start</button>
+    <button id="stp">Stop</button>
+</body>
+<script>
+    const changeTime = function() {
+        let now = new Date();
+
+        let hours = String(now.getHours()).padStart(2, "0");
+        let minutes = String(now.getMinutes()).padStart(2, "0");
+
+        document.querySelector('#clck').value =
+            `${hours}:${minutes}`;
+    }
+
+    let timeNow;
+    document.querySelector("#strt").addEventListener('click', function(){
+        timeNow = setInterval(changeTime,1000);
+    })
+    
+    document.querySelector("#stp").addEventListener('click', function(){
+        clearInterval(timeNow);
+    })
+
+</script>
+</html>
